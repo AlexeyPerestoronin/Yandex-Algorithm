@@ -1,0 +1,60 @@
+{
+    "tests": [
+        {
+            "input": [
+                "",
+                "aabbccd"
+            ],
+            "output": "0"
+        },
+        {
+            "input": [
+                "ab",
+                ""
+            ],
+            "output": "0"
+        },
+        {
+            "input": [
+                "",
+                ""
+            ],
+            "output": "0"
+        },
+        {
+            "input": [
+                "c",
+                "aabbccd"
+            ],
+            "output": "2"
+        },
+        {
+            "input": [
+                "d",
+                "aabbccd"
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "abc",
+                "aabbccd"
+            ],
+            "output": "6"
+        },
+        {
+            "input": [
+                "abcd",
+                "aabbccd"
+            ],
+            "output": "7"
+        },
+        {
+            "input": [
+                "w",
+                "aaaawaaaa"
+            ],
+            "output": "1"
+        }
+    ]
+}
