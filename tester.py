@@ -26,7 +26,10 @@ class TaskTest:
 
     def __getResult(self):
         with open(os.path.join(self._task_folder, "output.txt"), 'r') as output_data_file:
-            return output_data_file.read()
+            data = output_data_file.read()
+            if '\n' in data:
+                data = data.split('\n')
+            return data
 
     def setTestFolder(self, folder_name : str):
         self._task_folder = folder_name
@@ -42,6 +45,24 @@ class TaskTest:
 class StonesAndJewels(unittest.TestCase, TaskTest):
     def setUp(self) -> None:
         self.setTestFolder("stones and jewels")
+
+    def test(self):
+        results = self.perform()
+        for expected_res, real_res in results:
+            self.assertEqual(expected_res, real_res)
+
+class OnesInARow(unittest.TestCase, TaskTest):
+    def setUp(self) -> None:
+        self.setTestFolder("ones in a row")
+
+    def test(self):
+        results = self.perform()
+        for expected_res, real_res in results:
+            self.assertEqual(expected_res, real_res)
+
+class RemovingOfDuplicates(unittest.TestCase, TaskTest):
+    def setUp(self) -> None:
+        self.setTestFolder("removing of duplicates")
 
     def test(self):
         results = self.perform()
