@@ -1,0 +1,74 @@
+{
+    "tests": [
+        {
+            "input": [
+                "qiu",
+                "iuq"
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "zprl",
+                "zprc"
+            ],
+            "output": "0"
+        },
+        {
+            "input": [
+                "",
+                ""
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "a",
+                "a"
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "",
+                "qwe"
+            ],
+            "output": "0"
+        },
+        {
+            "input": [
+                "qwe",
+                ""
+            ],
+            "output": "0"
+        },
+        {
+            "input": [
+                "qwe",
+                "ewq"
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "zxcvbnm",
+                "zxcvbnm"
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "qazxsw",
+                "xzaswq"
+            ],
+            "output": "1"
+        },
+        {
+            "input": [
+                "qwsazx",
+                "zwasxq"
+            ],
+            "output": "1"
+        }
+    ]
+}

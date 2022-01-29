@@ -17,8 +17,12 @@ class TaskTest:
 
     def __createInputFile(self, input_data):
         with open(os.path.join(self._task_folder, "input.txt"), 'w') as input_data_file:
+            counter = 0
             for data in input_data:
-                input_data_file.write(f"{data}\n")
+                if (counter > 0):
+                    input_data_file.write("\n")
+                input_data_file.write(f"{data}")
+                counter += 1
 
     def __callExcutable(self):
         p = subprocess.Popen(os.path.join(self._task_folder, "main.exe"), cwd=self._task_folder)
@@ -63,6 +67,24 @@ class OnesInARow(unittest.TestCase, TaskTest):
 class RemovingOfDuplicates(unittest.TestCase, TaskTest):
     def setUp(self) -> None:
         self.setTestFolder("removing of duplicates")
+
+    def test(self):
+        results = self.perform()
+        for expected_res, real_res in results:
+            self.assertEqual(expected_res, real_res)
+
+class GenerationOfBracketSequences(unittest.TestCase, TaskTest):
+    def setUp(self) -> None:
+        self.setTestFolder("generation of bracket sequences")
+
+    def test(self):
+        results = self.perform()
+        for expected_res, real_res in results:
+            self.assertEqual(expected_res, real_res)
+
+class Anagrams(unittest.TestCase, TaskTest):
+    def setUp(self) -> None:
+        self.setTestFolder("anagrams")
 
     def test(self):
         results = self.perform()
